@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Ni Sang">
+    <meta name="keywords" content="K8s别名, Ni Sang">
     <meta name="description" content="Ni Sang个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Ni Sang</title>
+    <title>K8s别名 | Ni Sang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/64da86a8d11f85a309a38.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">K8s别名</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/K8s/">
+                                <span class="chip bg-color">K8s</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -449,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/K8s/" class="post-category">
+                                K8s
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-17
+                    2023-09-20
                 </div>
                 
 
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    679
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -506,19 +506,170 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="kubernetes的常用命令"><a href="#kubernetes的常用命令" class="headerlink" title="kubernetes的常用命令"></a>kubernetes的常用命令</h1><pre class="line-numbers language-none"><code class="language-none"># This command is used a LOT both below and in daily life
+alias k=kubectl
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+# Execute a kubectl command against all namespaces
+alias kca='_kca(){ kubectl "$@" --all-namespaces;  unset -f _kca; }; _kca'
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+# Apply a YML file
+alias kaf='kubectl apply -f'
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+# Drop into an interactive terminal on a container
+alias keti='kubectl exec -t -i'
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+# Manage configuration quickly to switch contexts between local, dev ad staging.
+alias kcuc='kubectl config use-context'
+alias kcsc='kubectl config set-context'
+alias kcdc='kubectl config delete-context'
+alias kccc='kubectl config current-context'
+
+# List all contexts
+alias kcgc='kubectl config get-contexts'
+
+# General aliases
+alias kdel='kubectl delete'
+alias kdelf='kubectl delete -f'
+
+# Pod management.
+alias kgp='kubectl get pods'
+alias kgpa='kubectl get pods --all-namespaces'
+alias kgpw='kgp --watch'
+alias kgpwide='kgp -o wide'
+alias kep='kubectl edit pods'
+alias kdp='kubectl describe pods'
+alias kdelp='kubectl delete pods'
+alias kgpall='kubectl get pods --all-namespaces -o wide'
+
+# get pod by label: kgpl "app=myapp" -n myns
+alias kgpl='kgp -l'
+
+# get pod by namespace: kgpn kube-system"
+alias kgpn='kgp -n'
+
+# Service management.
+alias kgs='kubectl get svc'
+alias kgsa='kubectl get svc --all-namespaces'
+alias kgsw='kgs --watch'
+alias kgswide='kgs -o wide'
+alias kes='kubectl edit svc'
+alias kds='kubectl describe svc'
+alias kdels='kubectl delete svc'
+
+# Ingress management
+alias kgi='kubectl get ingress'
+alias kgia='kubectl get ingress --all-namespaces'
+alias kei='kubectl edit ingress'
+alias kdi='kubectl describe ingress'
+alias kdeli='kubectl delete ingress'
+
+# Namespace management
+alias kgns='kubectl get namespaces'
+alias kens='kubectl edit namespace'
+alias kdns='kubectl describe namespace'
+alias kdelns='kubectl delete namespace'
+alias kcn='kubectl config set-context --current --namespace'
+
+# ConfigMap management
+alias kgcm='kubectl get configmaps'
+alias kgcma='kubectl get configmaps --all-namespaces'
+alias kecm='kubectl edit configmap'
+alias kdcm='kubectl describe configmap'
+alias kdelcm='kubectl delete configmap'
+
+# Secret management
+alias kgsec='kubectl get secret'
+alias kgseca='kubectl get secret --all-namespaces'
+alias kdsec='kubectl describe secret'
+alias kdelsec='kubectl delete secret'
+
+# Deployment management.
+alias kgd='kubectl get deployment'
+alias kgda='kubectl get deployment --all-namespaces'
+alias kgdw='kgd --watch'
+alias kgdwide='kgd -o wide'
+alias ked='kubectl edit deployment'
+alias kdd='kubectl describe deployment'
+alias kdeld='kubectl delete deployment'
+alias ksd='kubectl scale deployment'
+alias krsd='kubectl rollout status deployment'
+
+# Rollout management.
+alias kgrs='kubectl get replicaset'
+alias kdrs='kubectl describe replicaset'
+alias kers='kubectl edit replicaset'
+alias krh='kubectl rollout history'
+alias kru='kubectl rollout undo'
+
+# Statefulset management.
+alias kgss='kubectl get statefulset'
+alias kgssa='kubectl get statefulset --all-namespaces'
+alias kgssw='kgss --watch'
+alias kgsswide='kgss -o wide'
+alias kess='kubectl edit statefulset'
+alias kdss='kubectl describe statefulset'
+alias kdelss='kubectl delete statefulset'
+alias ksss='kubectl scale statefulset'
+alias krsss='kubectl rollout status statefulset'
+
+# Port forwarding
+alias kpf="kubectl port-forward"
+
+# Tools for accessing all information
+alias kga='kubectl get all'
+alias kgaa='kubectl get all --all-namespaces'
+
+# Logs
+alias kl='kubectl logs'
+alias kl1h='kubectl logs --since 1h'
+alias kl1m='kubectl logs --since 1m'
+alias kl1s='kubectl logs --since 1s'
+alias klf='kubectl logs -f'
+alias klf1h='kubectl logs --since 1h -f'
+alias klf1m='kubectl logs --since 1m -f'
+alias klf1s='kubectl logs --since 1s -f'
+
+# File copy
+alias kcp='kubectl cp'
+
+# Node Management
+alias kgno='kubectl get nodes'
+alias keno='kubectl edit node'
+alias kdno='kubectl describe node'
+alias kdelno='kubectl delete node'
+
+# PVC management.
+alias kgpvc='kubectl get pvc'
+alias kgpvca='kubectl get pvc --all-namespaces'
+alias kgpvcw='kgpvc --watch'
+alias kepvc='kubectl edit pvc'
+alias kdpvc='kubectl describe pvc'
+alias kdelpvc='kubectl delete pvc'
+
+# Service account management.
+alias kdsa="kubectl describe sa"
+alias kdelsa="kubectl delete sa"
+
+# DaemonSet management.
+alias kgds='kubectl get daemonset'
+alias kgdsw='kgds --watch'
+alias keds='kubectl edit daemonset'
+alias kdds='kubectl describe daemonset'
+alias kdelds='kubectl delete daemonset'
+
+# CronJob management.
+alias kgcj='kubectl get cronjob'
+alias kecj='kubectl edit cronjob'
+alias kdcj='kubectl describe cronjob'
+alias kdelcj='kubectl delete cronjob'
+
+# Job management.
+alias kgj='kubectl get job'
+alias kej='kubectl edit job'
+alias kdj='kubectl describe job'
+alias kdelj='kubectl delete job'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -545,7 +696,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yn197.github.io/2023/09/17/hello-world/">https://yn197.github.io/2023/09/17/hello-world/</a>
+                    <a href="https://yn197.github.io/2023/09/20/kubernetes-de-chang-yong-ming-ling-bie-ming-shi-yong/">https://yn197.github.io/2023/09/20/kubernetes-de-chang-yong-ming-ling-bie-ming-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,12 +734,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/K8s/">
+                                    <span class="chip bg-color">K8s</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -762,18 +913,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/20/git-chang-yong-cao-zuo/">
+                <a href="/2023/09/20/kuboard-an-zhuang/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/59e56787408d928a73a95.jpg" class="responsive-img" alt="Git的常用操作">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/6bef358991469a92427a8.jpg" class="responsive-img" alt="Kuboard安装">
                         
-                        <span class="card-title">Git的常用操作</span>
+                        <span class="card-title">Kuboard安装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git的常用命令以及主要注意事项
+                            k8s的控制台
                         
                     </div>
                     <div class="publish-info">
@@ -784,8 +935,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/K8s/" class="post-category">
+                                    K8s
                                 </a>
                             
                             
@@ -795,8 +946,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -807,49 +962,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/17/hello-world/">
+                <a href="/2023/09/20/kubernetes-bu-shu/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/32a608b8965200f87cbb4.png" class="responsive-img" alt="kubernetes部署">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">kubernetes部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容
+                            kubernetes部署
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/K8s/" class="post-category">
+                                    K8s
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

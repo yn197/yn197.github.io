@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Ni Sang">
+    <meta name="keywords" content="Git的常用操作, Ni Sang">
     <meta name="description" content="Ni Sang个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Ni Sang</title>
+    <title>Git的常用操作 | Ni Sang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/59e56787408d928a73a95.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Git的常用操作</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
-                            </a>
-                        
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
                             </a>
                         
                     </div>
@@ -449,8 +445,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/Git/" class="post-category">
+                                Git
                             </a>
                         
                     </div>
@@ -462,7 +458,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-17
+                    2023-09-20
                 </div>
                 
 
@@ -476,14 +472,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    636
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -506,19 +502,81 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="ssh-keys无需登录设置提交代码"><a href="#ssh-keys无需登录设置提交代码" class="headerlink" title="ssh keys无需登录设置提交代码"></a>ssh keys无需登录设置提交代码</h1><h2 id="1-生成ssh-key"><a href="#1-生成ssh-key" class="headerlink" title="1.生成ssh-key"></a>1.生成ssh-key</h2><pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C "your_email.com"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="2-设置github中ssh认证SSH-keys-粘贴id-rsa-pub"><a href="#2-设置github中ssh认证SSH-keys-粘贴id-rsa-pub" class="headerlink" title="2.设置github中ssh认证SSH keys,粘贴id_rsa.pub"></a>2.设置github中ssh认证SSH keys,粘贴id_rsa.pub</h2><pre class="line-numbers language-none"><code class="language-none">下次使用git clone "ssh地址"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="3-下面是git的常规操作了"><a href="#3-下面是git的常规操作了" class="headerlink" title="3.下面是git的常规操作了"></a>3.下面是git的常规操作了</h2><h3 id="3-0配置自己的用户名和邮箱"><a href="#3-0配置自己的用户名和邮箱" class="headerlink" title="3.0配置自己的用户名和邮箱"></a>3.0配置自己的用户名和邮箱</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"你的名字或昵称"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"你的邮箱"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="3-1进入项目文件夹，初始化一个Git仓库"><a href="#3-1进入项目文件夹，初始化一个Git仓库" class="headerlink" title="3.1进入项目文件夹，初始化一个Git仓库"></a>3.1进入项目文件夹，初始化一个Git仓库</h3><pre class="line-numbers language-none"><code class="language-none">git init <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="3-2加入当前目录下所有文件放入临时状态-暂存区-Staging-，可以使用如下命令"><a href="#3-2加入当前目录下所有文件放入临时状态-暂存区-Staging-，可以使用如下命令" class="headerlink" title="3.2加入当前目录下所有文件放入临时状态/暂存区(Staging)，可以使用如下命令"></a>3.2加入当前目录下所有文件放入临时状态/暂存区(Staging)，可以使用如下命令</h3><pre class="line-numbers language-none"><code class="language-none">git add .<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-3查看仓库当前文件提交状态（A：提交成功；AM：文件在添加到缓存之后又有改动）"><a href="#3-3查看仓库当前文件提交状态（A：提交成功；AM：文件在添加到缓存之后又有改动）" class="headerlink" title="3.3查看仓库当前文件提交状态（A：提交成功；AM：文件在添加到缓存之后又有改动）"></a>3.3查看仓库当前文件提交状态（A：提交成功；AM：文件在添加到缓存之后又有改动）</h3><pre class="line-numbers language-none"><code class="language-none">git status -s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-4从Git的暂存区提交版本到仓库，参数-m后为当次提交的备注信息"><a href="#3-4从Git的暂存区提交版本到仓库，参数-m后为当次提交的备注信息" class="headerlink" title="3.4从Git的暂存区提交版本到仓库，参数-m后为当次提交的备注信息"></a>3.4从Git的暂存区提交版本到仓库，参数-m后为当次提交的备注信息</h3><pre class="line-numbers language-none"><code class="language-none">git commit -m "项目初始化"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-5将本地的Git仓库信息推送上传到服务器"><a href="#3-5将本地的Git仓库信息推送上传到服务器" class="headerlink" title="3.5将本地的Git仓库信息推送上传到服务器"></a>3.5将本地的Git仓库信息推送上传到服务器</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push git@github.com:yn197/k8s-study.git
+<span class="token comment">#一般不建议</span>
+<span class="token function">git</span> push origin master <span class="token parameter variable">-f</span> 表示舍弃线上的文件，强制推送<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-6查看git提交的日志"><a href="#3-6查看git提交的日志" class="headerlink" title="3.6查看git提交的日志"></a>3.6查看git提交的日志</h3><pre class="line-numbers language-none"><code class="language-none">git log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="4-GIt提交大文件"><a href="#4-GIt提交大文件" class="headerlink" title="4.GIt提交大文件"></a>4.GIt提交大文件</h2><h3 id="4-1-下载git-lfs-windows-v3-3-0-https-git-lfs-github-com"><a href="#4-1-下载git-lfs-windows-v3-3-0-https-git-lfs-github-com" class="headerlink" title="4.1 下载git-lfs-windows-v3.3.0    https://git-lfs.github.com/"></a>4.1 下载git-lfs-windows-v3.3.0    <a target="_blank" rel="noopener" href="https://git-lfs.github.com/">https://git-lfs.github.com/</a></h3><h3 id="4-2-在本地安装这个软件"><a href="#4-2-在本地安装这个软件" class="headerlink" title="4.2 在本地安装这个软件"></a>4.2 在本地安装这个软件</h3><h3 id="4-3执行命令"><a href="#4-3执行命令" class="headerlink" title="4.3执行命令"></a>4.3执行命令</h3><pre class="line-numbers language-none"><code class="language-none">#lfs初始化
+git lfs install
+#我这边以上传一个minio.exe的文件为例
+git lfs track "*.exe"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="4-4添加-gitattributes（配置文件，缺少它执行其他git操作可能会有问题，具体作用不详述）"><a href="#4-4添加-gitattributes（配置文件，缺少它执行其他git操作可能会有问题，具体作用不详述）" class="headerlink" title="4.4添加.gitattributes（配置文件，缺少它执行其他git操作可能会有问题，具体作用不详述）"></a>4.4添加.gitattributes（配置文件，缺少它执行其他git操作可能会有问题，具体作用不详述）</h3><pre class="line-numbers language-none"><code class="language-none">git add .gitattributes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-5添加要上传（push）的文件"><a href="#4-5添加要上传（push）的文件" class="headerlink" title="4.5添加要上传（push）的文件"></a>4.5添加要上传（push）的文件</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> *.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="4-6-其他补充-突然有一天连接不上了"><a href="#4-6-其他补充-突然有一天连接不上了" class="headerlink" title="4.6 其他补充(突然有一天连接不上了)"></a>4.6 其他补充(突然有一天连接不上了)</h3><p>ssh: connect to host github.com port 22: Connection timed out</p>
+<pre class="line-numbers language-none"><code class="language-none">测试试下是否还可连接
+ssh -T git@github.com  
+否则
+cd ~/.ssh
+创建一个config文件
+内容如下<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>config</p>
+<pre class="line-numbers language-none"><code class="language-none">Host github.com
+User 注册github的邮箱
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>执行命令回车即可</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4.7push文件报错</p>
+<pre class="line-numbers language-none"><code class="language-none">To xxxx项目
+ ! [rejected]        main -&gt; main (fetch first)
+error: failed to push some refs to 'xxxx项目.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">git pull --rebase origin main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>再执行</p>
+<pre class="line-numbers language-none"><code class="language-none">git push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>参考地址：</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/help/articles/4114#article-header0">https://gitee.com/help/articles/4114#article-header0</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45405814/article/details/107080156">如何在GitHub上传大文件（≥100M）_github大文件_weixin_45405814的博客-CSDN博客</a> </p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hzyhhhwc/article/details/125655397">Git在push推送的时候报错：Donehint: not have locally. This is usually caused by another repository pushinghi_铁血码农-小何的博客-CSDN博客</a> </p>
 
                 
             </div>
@@ -545,7 +603,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yn197.github.io/2023/09/17/hello-world/">https://yn197.github.io/2023/09/17/hello-world/</a>
+                    <a href="https://yn197.github.io/2023/09/20/git-chang-yong-cao-zuo/">https://yn197.github.io/2023/09/20/git-chang-yong-cao-zuo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,12 +641,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
-                                </a>
-                            
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
                                 </a>
                             
                         </div>
@@ -762,18 +816,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/20/git-chang-yong-cao-zuo/">
+                <a href="/2023/09/20/linux-an-zhuang-jdk11/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/59e56787408d928a73a95.jpg" class="responsive-img" alt="Git的常用操作">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/862944ab9bcfc6957b316.png" class="responsive-img" alt="Linux安装Java运行环境">
                         
-                        <span class="card-title">Git的常用操作</span>
+                        <span class="card-title">Linux安装Java运行环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git的常用命令以及主要注意事项
+                            Linux安装Jdk11
                         
                     </div>
                     <div class="publish-info">
@@ -784,8 +838,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/Jdk/" class="post-category">
+                                    Jdk
                                 </a>
                             
                             
@@ -795,8 +849,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/Jdk/">
+                        <span class="chip bg-color">Jdk</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -807,7 +865,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2023/09/17/hello-world/">
@@ -840,7 +898,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

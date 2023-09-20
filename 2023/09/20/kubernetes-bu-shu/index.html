@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Ni Sang">
+    <meta name="keywords" content="kubernetes部署, Ni Sang">
     <meta name="description" content="Ni Sang个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Ni Sang</title>
+    <title>kubernetes部署 | Ni Sang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/32a608b8965200f87cbb4.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">kubernetes部署</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/K8s/">
+                                <span class="chip bg-color">K8s</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -449,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/K8s/" class="post-category">
+                                K8s
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-17
+                    2023-09-20
                 </div>
                 
 
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    616
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -506,19 +506,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="kubernetes部署"><a href="#kubernetes部署" class="headerlink" title="kubernetes部署"></a>kubernetes部署</h1><h2 id="1-环境准备"><a href="#1-环境准备" class="headerlink" title="1.环境准备"></a>1.环境准备</h2><pre class="line-numbers language-none"><code class="language-none">ubuntu-22.10-live-server-amd64
+Docker version 23.0.3, build 3e7cbfd
+k8s: 1.21.3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="1-1vi编辑工具包下载"><a href="#1-1vi编辑工具包下载" class="headerlink" title="1.1vi编辑工具包下载"></a>1.1vi编辑工具包下载</h3><pre class="line-numbers language-none"><code class="language-none">#方便修改用户名密码，以及主机信息
+apt-get install vim
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+vi /etc/ssh/sshd_config
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+# Authentication:
+LoginGraceTime 120
+#PermitRootLogin without-password
+PermitRootLogin yes
+StrictModes yes
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+重启ssh服务
+ /etc/init.d/ssh restart
+ 
+ 重新修改密码
+ sudo passwd root
+ <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-2关闭分区"><a href="#1-2关闭分区" class="headerlink" title="1.2关闭分区"></a>1.2关闭分区</h3><pre class="line-numbers language-none"><code class="language-none">#临时关闭
+swapoff -a
+
+#永久关闭
+vi /etc/fstab<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-3时间同步"><a href="#1-3时间同步" class="headerlink" title="1.3时间同步"></a>1.3时间同步</h3><pre class="line-numbers language-none"><code class="language-none">ubuntu更改时区（东八区）
+tzselect
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-4关闭防火墙"><a href="#1-4关闭防火墙" class="headerlink" title="1.4关闭防火墙"></a>1.4关闭防火墙</h3><pre class="line-numbers language-none"><code class="language-none">sudo apt-get install ufw
+sudo ufw disable<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="1-5添加其他的主机信息"><a href="#1-5添加其他的主机信息" class="headerlink" title="1.5添加其他的主机信息"></a>1.5添加其他的主机信息</h3><pre class="line-numbers language-none"><code class="language-none">192.168.1.90 k2
+192.168.1.238 k3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="1-6关闭selinux"><a href="#1-6关闭selinux" class="headerlink" title="1.6关闭selinux"></a>1.6关闭selinux</h3><pre class="line-numbers language-none"><code class="language-none">sudo apt install selinux-utils
+setenforce 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="1-7桥接的IPV4流量传递到Iptables"><a href="#1-7桥接的IPV4流量传递到Iptables" class="headerlink" title="1.7桥接的IPV4流量传递到Iptables"></a>1.7桥接的IPV4流量传递到Iptables</h3><pre class="line-numbers language-none"><code class="language-none">cat &gt; /etc/sysctl.d/k8s.conf &lt;&lt;EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+sysctl --system #生效
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-8配置Docker环境"><a href="#1-8配置Docker环境" class="headerlink" title="1.8配置Docker环境"></a>1.8配置Docker环境</h3><h3 id="1-9配置k8s资源"><a href="#1-9配置k8s资源" class="headerlink" title="1.9配置k8s资源"></a>1.9配置k8s资源</h3><pre class="line-numbers language-none"><code class="language-none">curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main" &gt; /etc/apt/sources.list.d/kubernetes.list
+apt-get update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-10安装kubeadm-初始化cluster-，kubelet-启动pod-和kubectl-k8s命令工具"><a href="#1-10安装kubeadm-初始化cluster-，kubelet-启动pod-和kubectl-k8s命令工具" class="headerlink" title="1.10安装kubeadm(初始化cluster)，kubelet(启动pod)和kubectl(k8s命令工具)"></a>1.10安装kubeadm(初始化cluster)，kubelet(启动pod)和kubectl(k8s命令工具)</h3><pre class="line-numbers language-none"><code class="language-none">apt install -y kubelet=1.21.3-00 kubeadm=1.21.3-00 kubectl=1.21.3-00<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="1-11设置开机启动并启动kubelet"><a href="#1-11设置开机启动并启动kubelet" class="headerlink" title="1.11设置开机启动并启动kubelet"></a>1.11设置开机启动并启动kubelet</h3><pre class="line-numbers language-none"><code class="language-none">systemctl enable kubelet &amp;&amp; systemctl start kubelet<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="2-拉取镜像-新建脚本k8s-sh"><a href="#2-拉取镜像-新建脚本k8s-sh" class="headerlink" title="2.拉取镜像,新建脚本k8s.sh"></a>2.拉取镜像,新建脚本k8s.sh</h2><pre class="line-numbers language-none"><code class="language-none">#!/bin/bash
+images=(
+ kube-apiserver:v1.21.3
+ kube-controller-manager:v1.21.3
+ kube-scheduler:v1.21.3
+ kube-proxy:v1.21.3
+ pause:3.2
+ etcd:3.4.13-0
+)
+for imageName in ${images[@]} ; do
+  docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/${imageName}
+  docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/${imageName} k8s.gcr.io/${imageName}
+  docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/${imageName}
+done
+docker pull coredns/coredns:1.8.0
+docker tag coredns/coredns:1.8.0 registry.aliyuncs.com/google_containers/coredns:v1.8.0
+docker rmi coredns/coredns:1.8.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后执行./k8s.sh</p>
+<h2 id="3-初始化Master"><a href="#3-初始化Master" class="headerlink" title="3.初始化Master"></a>3.初始化Master</h2><pre class="line-numbers language-none"><code class="language-none">kubeadm init --image-repository=registry.aliyuncs.com/google_containers  --pod-network-cidr=10.244.0.0/16	 --service-cidr=10.96.0.0/12<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="4-使用kubectl"><a href="#4-使用kubectl" class="headerlink" title="4.使用kubectl"></a>4.使用kubectl</h2><pre class="line-numbers language-none"><code class="language-none">mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="5-加入子节点"><a href="#5-加入子节点" class="headerlink" title="5.加入子节点"></a>5.加入子节点</h2><pre class="line-numbers language-none"><code class="language-none">kubeadm join 172.16.1.90:6443 --token 9pslv8.6tbrux0ksur0wgav --discovery-token-ca-cert-hash sha256:3709a3ce5a0ec819308d97a97c445a0414b0ed07a855cb3f948c288f38c7e35c 
+若没有记录，也可在master节点用以下操作获取：kubeadm token create --print-join-command<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="6-安装网络插件flannel"><a href="#6-安装网络插件flannel" class="headerlink" title="6.安装网络插件flannel"></a>6.安装网络插件flannel</h2><pre class="line-numbers language-none"><code class="language-none">sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+kubectl get cs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="7-解决组件状态Unhealthy"><a href="#7-解决组件状态Unhealthy" class="headerlink" title="7.解决组件状态Unhealthy"></a>7.解决组件状态Unhealthy</h2><pre class="line-numbers language-none"><code class="language-none">需要用#注释掉/etc/kubernetes/manifests下的kube-controller-manager.yaml和kube-scheduler.yaml的- – port=0
+
+注释完后重启服务
+systemctl restart kubelet.service
+再次查看组件状态（需要稍等）
+kubectl get cs
+查看节点状态
+kubectl get node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -545,7 +630,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yn197.github.io/2023/09/17/hello-world/">https://yn197.github.io/2023/09/17/hello-world/</a>
+                    <a href="https://yn197.github.io/2023/09/20/kubernetes-bu-shu/">https://yn197.github.io/2023/09/20/kubernetes-bu-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,12 +668,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/K8s/">
+                                    <span class="chip bg-color">K8s</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -762,18 +847,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/20/git-chang-yong-cao-zuo/">
+                <a href="/2023/09/20/kubernetes-de-chang-yong-ming-ling-bie-ming-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/59e56787408d928a73a95.jpg" class="responsive-img" alt="Git的常用操作">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/64da86a8d11f85a309a38.png" class="responsive-img" alt="K8s别名">
                         
-                        <span class="card-title">Git的常用操作</span>
+                        <span class="card-title">K8s别名</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git的常用命令以及主要注意事项
+                            K8s起别名
                         
                     </div>
                     <div class="publish-info">
@@ -784,8 +869,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/K8s/" class="post-category">
+                                    K8s
                                 </a>
                             
                             
@@ -795,8 +880,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -807,49 +896,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/17/hello-world/">
+                <a href="/2023/09/20/kubernetes-chang-yong-cao-zuo/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/35c174ec191b1aa97f425.jpg" class="responsive-img" alt="Kubernetes常用操作">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Kubernetes常用操作</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容
+                            Kubernetes常用操作
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/K8s/" class="post-category">
+                                    K8s
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Ni Sang">
+    <meta name="keywords" content="Kubernetes常用操作, Ni Sang">
     <meta name="description" content="Ni Sang个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Ni Sang</title>
+    <title>Kubernetes常用操作 | Ni Sang</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://telegraph-image-3cr.pages.dev/file/35c174ec191b1aa97f425.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Kubernetes常用操作</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/K8s/">
+                                <span class="chip bg-color">K8s</span>
                             </a>
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Linux/">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -449,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/K8s/" class="post-category">
+                                K8s
                             </a>
                         
                     </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-17
+                    2023-09-20
                 </div>
                 
 
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -506,19 +506,421 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <p>Kubernetes常用操作</p>
+<p>1.资源创建方式</p>
+<ul>
+<li>命令行</li>
+<li>YAML</li>
+</ul>
+<p>2.Namespace </p>
+<p>2.1名称空间用来隔离资源 </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl create ns hello
+kubectl delete ns hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.2 hello.yaml</p>
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: v1
+kind: Namespace
+metadata:
+  name: hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">kubectl apply -f hello.yaml
+kubectl get ns<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.Pod </p>
+<p>运行中的一组容器，Pod是kubernetes中应用的最小单位. </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl run mynginx --image=nginx -n hello
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+# 查看default名称空间的Pod
+kubectl get pod -n hello 
+# 描述
+kubectl describe pod -n hello你自己的Pod名字
+# 删除
+kubectl delete pod Pod -n hello名字
+# 查看Pod的运行日志
+kubectl logs Pod -n hello名字
+
+# 每个Pod - k8s都会分配一个ip
+kubectl get pod -owide -n hello
+# 使用Pod的ip+pod里面运行容器的端口
+curl 10.244.1.26
+
+# 集群中的任意一个机器以及任意的应用都能通过Pod分配的ip来访问这个Pod
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mynginx
+  name: mynginx
+  namespace: hello
+#  namespace: default
+spec:
+  containers:
+  - image: nginx
+    name: mynginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>pod.yaml</p>
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: myapp
+  name: myapp
+  namespace: hello
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+  - image: tomcat:8.5.68
+    name: tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">kubectl get pod -n hello
+
+NAME      READY   STATUS    RESTARTS   AGE
+myapp     2/2     Running   0          87s
+mynginx   1/1     Running   0          6m49s
+
+kubectl get pod -owide -n hello
+NAME      READY   STATUS    RESTARTS   AGE    IP            NODE   NOMINATED NODE   READINESS GATES
+myapp     2/2     Running   0          100s   10.244.1.27   u2     &lt;none&gt;           &lt;none&gt;
+mynginx   1/1     Running   0          7m2s   10.244.1.26   u2     &lt;none&gt;           &lt;none&gt;
+
+#访问nginx
+curl 10.244.1.27
+#访问tomcat
+curl 10.244.1.27:8080 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.Deployment </p>
+<p>4.0进入pod</p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl exec -ti pod名字 -n kubesphere-system -- /bin/sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>4.1.控制Pod，使Pod拥有多副本，自愈，扩缩容等能力 </p>
+<pre class="line-numbers language-none"><code class="language-none"># 清除所有Pod，比较下面两个命令有何不同效果？
+kubectl run mynginx--image=nginx -n hello
+
+kubectl create deployment mytomcat --image=tomcat:8.5.68   -n hello
+# 自愈能力
+即使你删除了由deployment生成的pod，他还是会自己生成一份pod
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.2 多副本</p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl create deployment my-dep --image=nginx --replicas=3 -n hello<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<p>delpyment.yaml</p>
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-dep
+  name: my-dep
+  namespace: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-dep
+  template:
+    metadata:
+      labels:
+        app: my-dep
+    spec:
+      containers:
+      - image: nginx
+        name: nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>4.3 扩缩容 </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl scale --replicas=5 deployment/my-dep<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">kubectl edit deployment my-dep
+
+#修改 replicas<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>4.4 自愈&amp;故障转移 </p>
+<ul>
+<li>停机</li>
+<li>删除Pod</li>
+<li>容器崩溃</li>
+</ul>
+<p>4.5 滚动更新 </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl set image deployment/my-dep nginx=nginx:1.16.1 --record -n hello
+kubectl rollout status deployment/my-dep -n hello
+
+# 修改 kubectl edit deployment/my-dep<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>4.6 版本回退 </p>
+<pre class="line-numbers language-none"><code class="language-none">#历史记录
+kubectl rollout history deployment/my-dep -n hello 
+
+
+#查看某个历史详情
+kubectl rollout history deployment/my-dep --revision=2 -n hello
+
+#回滚(回到上次)
+kubectl rollout undo deployment/my-dep -n hello
+
+#回滚(回到指定版本)
+kubectl rollout undo deployment/my-dep --to-revision=2 -n hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>更多：</p>
+<p>除了Deployment，k8s还有 <code>StatefulSet</code> 、<code>DaemonSet</code> 、<code>Job</code>  等 类型资源。我们都称为 <code>工作负载</code>。</p>
+<p>有状态应用使用  <code>StatefulSet</code>  部署，无状态应用使用 <code>Deployment</code> 部署</p>
+<p>参考官方文档: <a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/">StatefulSet | Kubernetes</a> </p>
+<p>5.Service </p>
+<p>将一组 <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/">Pods</a> 公开为网络服务的抽象方法。 </p>
+<pre class="line-numbers language-none"><code class="language-none">#暴露Deploy
+kubectl expose deployment my-dep --port=8000 --target-port=80 -n hello 
+
+#使用标签检索Pod
+kubectl get pod -l app=my-dep -n hello <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: my-dep
+  name: my-dep
+  namespace: hello
+spec:
+  selector:
+    app: my-dep
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 80<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>5.1ClusterIP </p>
+<pre class="line-numbers language-none"><code class="language-none"># 等同于没有--type的
+kubectl expose deployment my-dep --port=8000 --target-port=80 --type=ClusterIP -n hello<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>5.2 NodePort </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl expose deployment my-dep --port=8002 --target-port=80 --type=NodePort -n hello<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: my-dep
+  name: my-dep
+spec:
+  ports:
+  - port: 8002
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: my-dep
+  type: NodePort
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>NodePort范围在 30000-32767 之间</strong> </p>
+<p>6.Ingress </p>
+<p>6.1.安装 </p>
+<pre class="line-numbers language-none"><code class="language-none">wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.47.0/deploy/static/provider/baremetal/deploy.yaml
+
+#修改镜像
+vi deploy.yaml
+#1.将image的值改为如下值：
+registry.cn-hangzhou.aliyuncs.com/lfy_k8s_images/ingress-nginx-controller:v0.46.0
+#2、在修改了image的上一层增加 hostNetwork: true，如图下所示
+#3、找到secretName将ingress-nginx-admission改为ingress-nginx-admission-token
+
+# 安装
+kubectl apply -f deploy.yaml
+# 检查安装的结果
+kubectl get pod,svc -n ingress-nginx
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><img src="/..%5Cpic%5Cingress%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.png"></p>
+<p>6.2 查看状态</p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl get pod -n ingress-nginx <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果ingress-nginx-controller-7f6c55787f-2zmcv容器处于ContainerCreating，我们需要修改</p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl get secret -A | grep ingress-nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/../pic/snipaste_20230422_180117.png"></p>
+<p>6.3命令行修改方式</p>
+<pre class="line-numbers language-none"><code class="language-none"># 复制 （自己的）-kp77g ,将下图对应的位置，加上-kp77g
+kubectl edit deployment ingress-nginx-controller -n ingress-nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><img src="/../pic/admin-token.png"></p>
+<p>6.4查看状态已经可以了 </p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl get pod -n ingress-nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/../pic/true.png"></p>
+<p>6.5或者界面进行修改也是可以的</p>
+<p><img src="/../pic/dashboard.png"></p>
+<p>6.6验证</p>
+<pre class="line-numbers language-none"><code class="language-none">kubectl get svc -A<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/../pic/ingress-port.png"></p>
+<p>访问节点<a target="_blank" rel="noopener" href="http://ip+31436或者https//ip+31307%E9%83%BD%E6%98%AF%E5%8F%AF%E4%BB%A5%E7%9A%84">http://ip+31436或者https://ip+31307都是可以的</a></p>
+<p>6.7域名访问</p>
+<p>应用如下yaml，准备好测试环境 </p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> registry.cn<span class="token punctuation">-</span>hangzhou.aliyuncs.com/lfy_k8s_images/hello<span class="token punctuation">-</span>server
+        <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">containerPort</span><span class="token punctuation">:</span> <span class="token number">9000</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> apps/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Deployment
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">replicas</span><span class="token punctuation">:</span> <span class="token number">2</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">matchLabels</span><span class="token punctuation">:</span>
+      <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+  <span class="token key atrule">template</span><span class="token punctuation">:</span>
+    <span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+      <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+    <span class="token key atrule">spec</span><span class="token punctuation">:</span>
+      <span class="token key atrule">containers</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">image</span><span class="token punctuation">:</span> nginx
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+<span class="token punctuation">---</span>
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">9000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>域名访问 </p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> networking.k8s.io/v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress  
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>host<span class="token punctuation">-</span>bar
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ingressClassName</span><span class="token punctuation">:</span> nginx
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">"hello.atguigu.com"</span>
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> <span class="token string">"/"</span>
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> hello<span class="token punctuation">-</span>server
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">8000</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">"demo.atguigu.com"</span>
+    <span class="token key atrule">http</span><span class="token punctuation">:</span>
+      <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">pathType</span><span class="token punctuation">:</span> Prefix
+        <span class="token key atrule">path</span><span class="token punctuation">:</span> <span class="token string">"/nginx"</span>  <span class="token comment"># 把请求会转给下面的服务，下面的服务一定要能处理这个路径，不能处理就是404</span>
+        <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+          <span class="token key atrule">service</span><span class="token punctuation">:</span>
+            <span class="token key atrule">name</span><span class="token punctuation">:</span> nginx<span class="token punctuation">-</span>demo  <span class="token comment">## java，比如使用路径重写，去掉前缀nginx</span>
+            <span class="token key atrule">port</span><span class="token punctuation">:</span>
+              <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token number">8000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>路径重写 </p>
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: networking.k8s.io/v1
+kind: Ingress  
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: ingress-host-bar
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "hello.atguigu.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: hello-server
+            port:
+              number: 8000
+  - host: "demo.atguigu.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/nginx(/|$)(.*)"  # 把请求会转给下面的服务，下面的服务一定要能处理这个路径，不能处理就是404
+        backend:
+          service:
+            name: nginx-demo  ## java，比如使用路径重写，去掉前缀nginx
+            port:
+              number: 8000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>流量限制 </p>
+<pre class="line-numbers language-none"><code class="language-none">apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-limit-rate
+  annotations:
+    nginx.ingress.kubernetes.io/limit-rps: "1"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "haha.atguigu.com"
+    http:
+      paths:
+      - pathType: Exact
+        path: "/"
+        backend:
+          service:
+            name: nginx-demo
+            port:
+              number: 8000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -545,7 +947,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yn197.github.io/2023/09/17/hello-world/">https://yn197.github.io/2023/09/17/hello-world/</a>
+                    <a href="https://yn197.github.io/2023/09/20/kubernetes-chang-yong-cao-zuo/">https://yn197.github.io/2023/09/20/kubernetes-chang-yong-cao-zuo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -583,12 +985,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/K8s/">
+                                    <span class="chip bg-color">K8s</span>
                                 </a>
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Linux/">
+                                    <span class="chip bg-color">Linux</span>
                                 </a>
                             
                         </div>
@@ -762,18 +1164,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/20/git-chang-yong-cao-zuo/">
+                <a href="/2023/09/20/kubernetes-bu-shu/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/59e56787408d928a73a95.jpg" class="responsive-img" alt="Git的常用操作">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/32a608b8965200f87cbb4.png" class="responsive-img" alt="kubernetes部署">
                         
-                        <span class="card-title">Git的常用操作</span>
+                        <span class="card-title">kubernetes部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git的常用命令以及主要注意事项
+                            kubernetes部署
                         
                     </div>
                     <div class="publish-info">
@@ -784,8 +1186,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/categories/K8s/" class="post-category">
+                                    K8s
                                 </a>
                             
                             
@@ -795,8 +1197,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/K8s/">
+                        <span class="chip bg-color">K8s</span>
+                    </a>
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
                 </div>
@@ -807,49 +1213,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/17/hello-world/">
+                <a href="/2023/09/20/linux-an-zhuang-jdk11/">
                     <div class="card-image">
                         
-                        <img src="https://telegraph-image-3cr.pages.dev/file/5eb4ec2da3a7164f349db.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://telegraph-image-3cr.pages.dev/file/862944ab9bcfc6957b316.png" class="responsive-img" alt="Linux安装Java运行环境">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Linux安装Java运行环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容
+                            Linux安装Jdk11
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/Jdk/" class="post-category">
+                                    Jdk
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/Jdk/">
+                        <span class="chip bg-color">Jdk</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
